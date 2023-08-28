@@ -122,9 +122,13 @@ export default function MainSection() {
 
   return (
     <Wrapper id="main-section">
+      <SectionHeading>AUDIO LABELING</SectionHeading> {/* Moved this line here */}
         
       <PlayerWrapper>
+<<<<<<< Updated upstream
       <SectionHeading>DEV AUDIO LABELING</SectionHeading>
+=======
+>>>>>>> Stashed changes
         <div className="container example">
           <CenteredReactWavesWrapper>
             <ReactWaves
@@ -165,9 +169,6 @@ export default function MainSection() {
           <IconButton onClick={() => setPlaying(!playing)}>
             {playing ? <PauseIcon /> : <PlayArrowIcon />}
           </IconButton>
-          {/* <IconButton onClick={toggleRegion}>
-            {showRegion ? <VisibilityOffIcon /> : <VisibilityIcon />}
-          </IconButton> */}
         </ButtonWrapper>
         <TextField
           label="Enter the content of the audio"
@@ -191,10 +192,12 @@ export default function MainSection() {
       </PlayerWrapper>
     </Wrapper>
   );
+  
 }
 
 const Wrapper = styled.div`
   display: flex;
+  flex-direction: column; /* Adding this line to ensure stacked content */
   justify-content: center;
   align-items: center;
   height: 500px;
@@ -209,6 +212,7 @@ const PlayerWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20px;
 `;
 
 const CenteredReactWavesWrapper = styled.div`

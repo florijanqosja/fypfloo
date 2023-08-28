@@ -45,6 +45,7 @@ export default function MainNavbar() {
                 Validate
               </Link>
             </li>
+<<<<<<< Updated upstream
             {/* <li className="semiBold font15 pointer">
               <Link to="/" activeClass="active" style={{ padding: "10px 15px" }} spy={true} smooth={true} offset={-80}>
                 Record
@@ -58,6 +59,12 @@ export default function MainNavbar() {
               >
                 Community
               </a>
+=======
+            <li>
+              <LoginButton href="https://community.uneduashqiperine.com/" target="_blank" rel="noopener noreferrer">
+                Login
+              </LoginButton>
+>>>>>>> Stashed changes
             </li>
           </UlWrapper>
         </NavInner>
@@ -65,6 +72,25 @@ export default function MainNavbar() {
     </>
   );
 }
+
+const LoginButton = styled.a`
+  margin-left: 40px;  
+  padding: 8px 20px;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  background-color: #301616; 
+  color: #FFFFFF;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #b33e3a;
+    color: #FFFFFF;
+  }
+`;
 
 const Wrapper = styled.nav`
   width: 100%;

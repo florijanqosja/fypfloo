@@ -49,6 +49,7 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
           </Link>
         </li>
         <li className="semiBold font15 pointer">
+<<<<<<< Updated upstream
           <a
             onClick={() => toggleSidebar(!sidebarOpen)}
             className="whiteColor"
@@ -57,6 +58,11 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
           >
             Community
           </a>
+=======
+          <SidebarLoginButton href="https://community.uneduashqiperine.com/" target="_blank" rel="noopener noreferrer">
+            Login
+          </SidebarLoginButton>
+>>>>>>> Stashed changes
         </li>
       </UlStyle>
     </Wrapper>
@@ -91,5 +97,23 @@ const UlStyle = styled.ul`
   padding: 40px;
   li {
     margin: 20px 0;
+  }
+`;
+
+const SidebarLoginButton = styled.a`
+  padding: 8px 20px;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  background-color: #301616; 
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #b33e3a;
+    color: #FFFFFF;
   }
 `;

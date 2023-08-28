@@ -4,3 +4,4 @@ api/splices/
 api/audio_files
 web/node_modules/
 data/
+web/build

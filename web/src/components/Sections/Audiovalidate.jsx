@@ -19,6 +19,7 @@ export default function AudioValidater() {
   const [labelValue, setLabelValue] = useState("");
   const [audioID, setAudioID] = useState(null);
   const [audioPath, setAudioPath] = useState("");
+
   const wavesurferRef = useRef(null);
 
   const region = {
@@ -34,11 +35,18 @@ export default function AudioValidater() {
 
   const fetchAudioData = async () => {
     try {
+<<<<<<< Updated upstream
       const response = await axios.get(`${process.env.REACT_APP_API_DOMAIN_DEV}audio/to_validate`);
       const { Sp_PATH, Sp_ID } = response.data;
       const audioURL = `${process.env.REACT_APP_FILE_ACCESS_DOMAIN_DEV}${Sp_PATH}`;
+=======
+      const response = await axios.get(`${process.env.REACT_APP_API_DOMAIN_LOCAL}audio/to_validate`);
+      const { Sp_PATH, Sp_ID, Sp_LABEL } = response.data;
+      const audioURL = `${process.env.REACT_APP_FILE_ACCESS_DOMAIN_LOCAL}${Sp_PATH}`;
+>>>>>>> Stashed changes
       setAudioPath(audioURL);
       setAudioID(Sp_ID);
+      setLabelValue(Sp_LABEL);
       console.log("set the audioID to ", Sp_ID);
 
       if (wavesurfer) {
@@ -121,9 +129,8 @@ export default function AudioValidater() {
 
   return (
     <Wrapper id="main-section">
-        
+      <SectionHeading>AUDIO Validating</SectionHeading>
       <PlayerWrapper>
-      <SectionHeading>LABELED AUDIO VALIDATING</SectionHeading>
         <div className="container example">
           <CenteredReactWavesWrapper>
             <ReactWaves
@@ -194,6 +201,7 @@ export default function AudioValidater() {
 
 const Wrapper = styled.div`
   display: flex;
+  flex-direction: column; /* Adding this line to ensure stacked content */
   justify-content: center;
   align-items: center;
   height: 500px;
@@ -208,6 +216,7 @@ const PlayerWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20px;
 `;
 
 const CenteredReactWavesWrapper = styled.div`

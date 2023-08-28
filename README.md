@@ -19,6 +19,18 @@ This project is made up of three main parts: an API that serves all the files to
 pip install -r requirements.txt
 
 ```
+then start the front end
+
+```
+cd web
+```
+```
+npm install
+```
+```
+npm start
+```
+
 
 ## Dataset amd Pre-trained Models Links
 
